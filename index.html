@@ -33,8 +33,12 @@ body.hidecursor{cursor:none}
 #viewport{position:fixed;inset:0;overflow:hidden;background:var(--navy)}
 #stage{width:1920px;height:1080px;position:absolute;left:50%;top:50%;overflow:hidden;transform-origin:center center;background:var(--navy)}
 #s-thanks h1{font-size:220px;letter-spacing:-.04em}
-#s-thanks .kmark2{width:90px;opacity:.9}
-#s-thanks .kmark2 svg{display:block;width:100%;height:auto}
+#s-thanks .kin{display:inline-block;height:.735em;width:auto;vertical-align:baseline;margin:0 .012em;opacity:0;transition:transform 1.3s cubic-bezier(.2,.9,.25,1.08), opacity .5s ease}
+#s-thanks .kin.down{transform:translateY(-760px)}
+#s-thanks .kin.up{transform:translateY(760px)}
+#s-thanks.active .kin{transform:none;opacity:1}
+#s-thanks.active .kin.down{transition-delay:.35s,.35s}
+#s-thanks.active .kin.up{transition-delay:.6s,.6s}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease, visibility 0s linear .7s}
 .slide.active{opacity:1;visibility:visible;transition:opacity .7s ease, visibility 0s}
 .navy{background:radial-gradient(1400px 900px at 70% 20%, #23285e 0%, var(--navy) 55%, #12143a 100%)}
@@ -457,8 +461,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.05}
 <!-- 12. Thanks -->
 <section class="slide navy" id="s-thanks" data-steps="0">
   <div class="center">
-    <h1>Takk fyri.</h1>
-    <div class="kmark2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="58 30 100 136" role="img" aria-label="Kodio"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg></div>
+    <h1 aria-label="Takk fyri."><span aria-hidden="true">Ta<svg class="kin down" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg><svg class="kin up" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg> fyri.</span></h1>
   </div>
 </section>
 

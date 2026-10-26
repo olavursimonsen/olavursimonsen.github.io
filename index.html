@@ -30,8 +30,11 @@ body{font-family:Poppins, "Helvetica Neue", Arial, sans-serif;color:var(--white)
 body.hidecursor{cursor:none}
 
 /* ===== Stage ===== */
-#viewport{position:fixed;inset:0;display:grid;place-items:center}
-#stage{width:1920px;height:1080px;position:relative;overflow:hidden;transform-origin:center center;flex:none;background:var(--navy)}
+#viewport{position:fixed;inset:0;overflow:hidden;background:var(--navy)}
+#stage{width:1920px;height:1080px;position:absolute;left:50%;top:50%;overflow:hidden;transform-origin:center center;background:var(--navy)}
+#s-thanks h1{font-size:220px;letter-spacing:-.04em}
+#s-thanks .kmark2{width:90px;opacity:.9}
+#s-thanks .kmark2 svg{display:block;width:100%;height:auto}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease, visibility 0s linear .7s}
 .slide.active{opacity:1;visibility:visible;transition:opacity .7s ease, visibility 0s}
 .navy{background:radial-gradient(1400px 900px at 70% 20%, #23285e 0%, var(--navy) 55%, #12143a 100%)}
@@ -292,11 +295,11 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.05}
     <div class="prow"><span>Ostur</span><span class="bar"><i style="--w:42%"></i></span><em>21 %</em></div>
     <div class="prow"><span>Kaffi</span><span class="bar"><i style="--w:24%"></i></span><em>12 %</em></div>
   </div>
-  <div class="after"><h2>Hvat um seðilin hevði lisið næstan alt?</h2></div>
+  <div class="after"><h2>Hvat um seðilin innihelt næstan alt?</h2></div>
 </section>
 
 <!-- 1b. Vitlíki -->
-<section class="slide navy" id="s-llm" data-steps="5">
+<section class="slide navy" id="s-llm" data-steps="4">
   <div class="ttl">Vitlíki</div>
   <div class="sub">Ein seðil, sum hevur lært av ómetaliga nógvum tekstum.</div>
   <div class="panel p1" data-from="1" data-to="1">
@@ -306,17 +309,16 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.05}
       <div class="prow"><span>svimja</span><span class="bar"><i style="--w:18%"></i></span><em>9 %</em></div>
       <div class="prow"><span>baka</span><span class="bar"><i style="--w:12%"></i></span><em>6 %</em></div>
     </div>
-    <div class="note">Dømi. Vitlíki gætir eftir, hvat er mest sannlíkt at koma næst.</div>
+    <div class="note">Dømi: Vitlíki metir um, hvat mest sannlíkt kemur næst.</div>
   </div>
   <div class="panel p2" data-from="2" data-to="2">
     <div class="dotw"><div class="dot"></div><p>Alt, sum tú lesur í einum lívi</p></div>
-    <div class="circw"><div class="circ"></div><p>Tað, sum vitlíki hevur lært av</p></div>
-    <div class="cap">Meira, enn tú kanst lesa í túsund lív.</div>
+    <div class="circw"><div class="circ"></div><p>Alt, sum vitlíki hevur lært av.</p></div>
+    <div class="cap">Um tú hevði 1000 lív, so var tað ikki nokk.</div>
   </div>
-  <div class="panel p3" data-from="3" data-to="5">
+  <div class="panel p3" data-from="3" data-to="4">
     <div class="r" data-b="3">Størri og skjótari enn vit.</div>
-    <div class="r" data-b="4">Ikki stríðast ímóti. Brúka tað.</div>
-    <div class="r" data-b="5">Rætt brúkt: eitt amboð til kappingarføri.</div>
+    <div class="r" data-b="4">Brúka tað til kappingarføri.</div>
   </div>
 </section>
 
@@ -448,7 +450,15 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.05}
   </div>
   <div class="final">
     <h1>Meira tíð til menniskju</h1>
-    <p>Um tit kundu frígjørt tíð við vitlíki, hvørjum høvdu TIT so brúkt hana saman við?</p>
+    <p>Hvørjum vilja tit brúka tíðina saman við?</p>
+  </div>
+</section>
+
+<!-- 12. Thanks -->
+<section class="slide navy" id="s-thanks" data-steps="0">
+  <div class="center">
+    <h1>Takk fyri.</h1>
+    <div class="kmark2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="58 30 100 136" role="img" aria-label="Kodio"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg></div>
   </div>
 </section>
 
@@ -498,11 +508,10 @@ const NOTES = {
 (Tølini eru eitt dømi, ikki veruligar mátingar.)
 
 [KLIKK 2 → prikkurin og ringurin]
-"Prikkurin er alt, sum tú fert at lesa í tínum lívi. Ringurin er tað, sum vitlíki hevur lært av. Meira, enn tú kanst lesa í túsund lív."
+"Prikkurin er alt, sum tú fert at lesa í tínum lívi. Ringurin er alt, sum vitlíki hevur lært av. Um tú hevði 1000 lív, so var tað ikki nokk."
 
 [KLIKK 3] "Tað er størri og skjótari enn vit."
-[KLIKK 4] "So í staðin fyri at stríðast ímóti tí, skulu vit brúka tað."
-[KLIKK 5] "Rætt brúkt er hetta ein seðil, sum ger okkum kappingarfør. Men tað eru framvegis vit, sum avgera, hvat stendur á listanum."`,
+[KLIKK 4] "So í staðin fyri at stríðast ímóti tí, skulu vit brúka tað til kappingarføri. Men tað eru framvegis vit, sum avgera, hvat stendur á listanum."`,
 "s-title": `"Eg eiti Ólavur Simonsen og arbeiði hjá Kodio. Vit eru eitt lítið toymi, sum mennir talgildar loysnir til fyritøkur og stovnar."
 Ein setningur. Far víðari.`,
 "s-why": `"Vitlíki ger, at vit kunnu menna nógv skjótari. Men tað áhugaverda er ikki ferðin. Spurningurin er: Hvat vilja vit á Kodio helst brúka tíðina til?"
@@ -546,8 +555,10 @@ Nevn: Starvsfólkini lesa týðingina ígjøgnum, áðrenn tey leggja út. Vitl�
 [KLIKK] "Og vit byrja altíð við kundanum."
 [KLIKK → Meira tíð til menniskju. Steðga leingi.]
 "Hjá okkum byrjaði tað við eini samrøðu við ein kunda. Í hesum døminum endar tað hjá børnunum."
-[KLIKK] "Um tit kundu frígjørt tíð við vitlíki, hvørjum høvdu TIT so brúkt hana saman við?"
-[Steðga] "Takk fyri."`
+[KLIKK] "Hvørjum vilja tit brúka tíðina saman við?"
+[Steðga. Lat spurningin standa.]
+[KLIKK → Takk fyri.] "Takk fyri."`,
+"s-thanks": `Lat síðuna standa, meðan spurningar verða settir.`
 };
 /* =================================== */
 
@@ -561,7 +572,8 @@ $('#logoSlot').innerHTML = CONFIG.logoSvg ? CONFIG.logoSvg.replace('<svg','<svg 
 ['da','kl','en'].forEach(l => $('#c-'+l).textContent = CONFIG[l]);
 
 // scale stage
-function fit(){ const s = Math.min(innerWidth/1920, innerHeight/1080); $('#stage').style.transform = `scale(${s})`; }
+function fit(){ const s = Math.min(innerWidth/1920, innerHeight/1080); $('#stage').style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener('fullscreenchange', fit);
 addEventListener('resize', fit); fit();
 
 /* ---------- per-slide behaviours ---------- */

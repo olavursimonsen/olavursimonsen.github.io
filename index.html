@@ -490,81 +490,150 @@ const CONFIG = {
   quote: "Kunnu vit fáa kunningina á enskum?"
 };
 const NOTES = {
-"s-logo": `[Stendur á skíggjanum, meðan fólk seta seg. Bíða, til tað er kvirt.]
-[KLIKK, tá tú ert klárur at byrja.]`,
-"s-list": `[Byrja beinanvegin. Eingin kynning.]
-"Tit kenna tað øll. Tú skalt í handilin eftir trimum tingum. Mjólk. Breyð. Egg."
-"Trý ting. Tey minnist eg. Men skal eg keypa meira enn trý ting, so má eg hava ein seðil við."
-[Steðga.]
-"Annars komi eg heim við tveimum av teimum … og onkrum, sum ikki stóð á listanum."
-"Seðilin er eitt einfalt amboð. Á honum stendur bara tað, vit sjálvi hava skrivað."
+"s-logo": `Á skíggjanum: Kodio-merkið á bláari baksíðu.
+[Stendur á skíggjanum, meðan fólk seta seg. Bíða, til tað er kvirt í salinum. Anda djúpt]
+[KLIKK] → Síða 2, tá ið tú ert klárur at byrja.`,
+"s-list": `Á skíggjanum: Ein seðil, sum skrivar seg sjálvan: Mjólk, Breyð, Egg. Byrja beinanvegin, uttan at siga hvør tú ert.
+"Tit kenna tað øll. Tú skal í handilin eftir trimum tingum. Mjólk. Breyð. Egg."
+[Steðga]
+"Trý ting klári eg at minnist. So á veg út, gjøgnum hurðina "Og ost!... og gloym endiliga ikki kaffi!". Nú er knappliga kaffi tað viktigasta, og tá eg eri komin hálvan vegin, so er hitt gloymt."
+[Steðga]
 
-[KLIKK 1 → Hvat kemur næst?]
-"Men hvat um seðilin kundi gita, hvat kemur næst? Mjólk, breyð, egg … so er smør nokso sannlíkt."
+[KLIKK 1] Seðilin flytur til vinstru. Eitt kort kemur fram: Hvat kemur næst? Smør 34 %, Ostur 21 %, Kaffi 12 %.
+"Ok, so stendur tú í handlinum, Mjólk, breyð, egg … so er smør og ostur nokkso sannlíkt."
+"So komi eg heima aftur... Skít, konan ill, og eg má krúpa til krossin".
+[Steðga. Lat fólk flenna.]
+"So fleiri enn trý ting, brúka ein innkeypsseðil"
 
-[KLIKK 2 → seðilin veksur]
-"Og hvat um seðilin hevði lisið næstan alt, sum er skrivað á alnetinum? So kundi hann hjálpt okkum við nógv meira enn innkeypi."
+[KLIKK 2] Seðilin veksur og veksur.
+"Innkeypsseðil er eitt gott amboð, sum kann minna okkum á fleiri vørur, og enntá, hvat vit skulu gera"
 
-[KLIKK 3 → seðilin hvørvur]
-"Tann seðilin hava vit í dag."`,
-"s-llm": `"Hann eitur vitlíki. Á fakmáli eitur tað eitt stórt málmodell."
+[KLIKK 3] Seðilin hvørvur. Spurningurin kemur: Hvat um seðilin innihelt næstan alt?
+"Tann seðilin hava vit í dag."
+[KLIKK] → Síða 3`,
+"s-llm": `Á skíggjanum: Vitlíki. Ein seðil, sum hevur lært av ómetaliga nógvum tekstum.
+"Hann eitur vitlíki. Og hann er byggir uppá sannlíkindi allan vegin"
 
-[KLIKK 1 → Í morgin fara vit at …]
-"Eitt málmodell hevur lært av ómetaliga nógvum tekstum. Tað gætir eftir, hvat orð er mest sannlíkt at koma næst. Í morgin fara vit at … ganga."
-(Tølini eru eitt dømi, ikki veruligar mátingar.)
+[KLIKK 1] Í morgin fara vit at … ganga 41 %, svimja 9 %, baka 6 %.
+"Út frá ómetaliga nógvum tekstum, dugir vitlíka at gita, hvat orð er mest sannlíkt at koma næst."
+"Í morgin fara vit at … ganga. Tað er nokk tað, sum barnagarðurin ætlar."
+[Tølini eru eitt dømi, ikki veruligar mátingar. Sig tað, um onkur spyr.]
 
-[KLIKK 2 → prikkurin og ringurin]
-"Prikkurin er alt, sum tú fert at lesa í tínum lívi. Ringurin er alt, sum vitlíki hevur lært av. Um tú hevði 1000 lív, so var tað ikki nokk."
+[KLIKK 2] Ein lítil prikkur og ein stórur ringur.
+"Um vit sita, at prikkurin er alt, sum tú fert at lesa í tínum lívi. Ringurin er alt, sum vitlíki hevur lært av."
+"Um tú hevði 1000 lív, so var tað ikki nokk."
+[Steðga]
 
-[KLIKK 3] "Tað er størri og skjótari enn vit."
-[KLIKK 4] "So í staðin fyri at stríðast ímóti tí, skulu vit brúka tað til kappingarføri. Men tað eru framvegis vit, sum avgera, hvat stendur á listanum."`,
-"s-title": `"Eg eiti Ólavur Simonsen og arbeiði hjá Kodio. Vit eru eitt lítið toymi, sum mennir talgildar loysnir til fyritøkur og stovnar."
-Ein setningur. Far víðari.`,
-"s-why": `"Vitlíki ger, at vit kunnu menna nógv skjótari. Men tað áhugaverda er ikki ferðin. Spurningurin er: Hvat vilja vit á Kodio helst brúka tíðina til?"
-[KLIKK]
-"Svarið er: til kundan. At tosa við tey, skilja teirra gerandisdag og finna út av, hvat er vert at byggja."`,
-"s-dev": `"Lat meg vísa tykkum, hvat vit arbeiða við."
-[KLIKK → teldan og telefonin koma inn samstundis]
-"Hetta er intra. Við agentum, sum byggja á vitlíki, menna vit web og app samstundis, við einari ferð, sum ikki var møgulig fyri stuttari tíð síðan."
-SKEMT: "Vitlíki er sera skjótt. Eisini tá tað hevur misskilt uppgávuna."
-"Tí kanna og royna vit alt, áðrenn tað fer út. Agentarnir skriva. Vit avgera."`,
-"s-quote": `[Spurningurin skrivar seg sjálvur. Lat hann standa.]
-"Hetta spurdi ein leiðari á einum barnagarði okkum."
-[KLIKK]
-"Á barnagarðinum eru foreldur úr Filipsoyggjum og aðrastaðni, sum ikki skilja føroyskt. Tey vildu bara skriva eina ferð, á føroyskum, og so skuldu foreldrini fáa tað á enskum."
-Eingin skemt her. Lat tørvin fáa pláss.`,
-"s-lang": `[SIG EINKI í fimm sekund. Lat salin lesa.]
-"Hetta er ein vanlig fráboðan frá einum barnagarði. Á tagalog. Soleiðis kendu foreldrini seg, tá ið kunningin bert var á føroyskum."
-[KLIKK → teksturin verður føroyskur]
+[KLIKK 3] "Tað er størri og skjótari enn vit. Næstan allastaðni"
+[KLIKK 4] "So í staðin fyri at stríðast ímóti tí, skulu vit brúka tað til kappingarføri. Tað eru framvegis vit, sum avgera, hvat vit vilja hava á innkeypslistanum."
+[KLIKK] → Síða 4`,
+"s-title": `Á skíggjanum: Meira tíð til menniskju. Kodio. Ólavur Simonsen.
+"Eg eiti Ólavur Simonsen, og eg arbeiði hjá Kodio. Vit eru eitt lítið toymi, sum mennir talgildar loysnir til fyritøkur og stovnar."
+"Í dag vil eg siga tykkum frá, hvussu vit brúka vitlíki. Og um eina søgu frá einum barnagarði."
+[KLIKK] → Síða 5`,
+"s-why": `Á skíggjanum: Hvat vilja vit á Kodio helst brúka tíðina til?
+"Vitlíki ger, at vit kunnu menna nógv skjótari enn áður."
+"Men tað áhugaverda er, at tíðin gongur enn líka skjótt. Spurningurin er: Hvat vilja vit á Kodio helst brúka tíðina til?"
+[Steðga]
+
+[KLIKK 1] Til kundan.
+"Hjá okkum er svarið einfalt: Til kundan."
+"At tosa við kundarnar. At skilja teirra gerandisdag. Og at finna út av, hvat er vert at byggja."
+[KLIKK] → Síða 6`,
+"s-dev": `Á skíggjanum: Web og app. Samstundis.
+"Lat meg stutt vísa tykkum, hvat vit arbeiða við."
+
+[KLIKK 1] Teldan og telefonin koma inn samstundis.
+"Hetta er intra. Eitt intranet til fyritøkur og stovnar. Til vinstru sæst web-útgávan. Til høgru sæst appin."
+"Vit menna bæði samstundis. Tað kunnu vit, tí vit brúka agentar, sum byggja á vitlíki og skriva stóran part av koduni."
+"Fyri stuttari tíð síðan hevði eitt lítið toymi sum okkara ikki megnað hetta í hesi ferð."
+[Steðga. Skemt:]
+"Sum tit síggja, so er uppgávulistin hjá mær enn tómur, so spurningurin er, um eg havi lært nakað"
+[Steðga. Lat fólk flenna.]
+"Nå, men Agentarnir skriva við rúkandi fer. Men tað eru vit, sum avgera, hvat fer út"
+"Og tíðina, sum vit spara, brúka vit til at tosa við kundarnar. Og tað vísir seg, at tað er nógv meir at heinta har, enn hildið verður."
+[KLIKK] → Síða 7`,
+"s-quote": `Á skíggjanum: Spurningurin skrivar seg sjálvur: "Kunnu vit fáa kunningina á enskum?" Bíða, til hann er liðugur.
+"Hetta er ein spurningur frá einum leiðara á einum barnagarði."
+
+[KLIKK 1] Undirtekstur kemur.
+"Á barnagarðinum eru foreldur úr Filipsoyggjum og aðrastaðni, sum ikki skilja føroyskt."
+"Hvørja ferð starvsfólkini skuldu boða foreldrunum frá, máa tey skriva tað á føroyskum og so umaftur á enskum. Ella fáa hesi foreldrini ikki boðini."
+"Tey ynskja bara at skriva eina ferð. Á føroyskum. Og so skuldu foreldrini fáa tað á enskum."
+Onki skemt her. Lat tørvin fáa pláss.
+[KLIKK] → Síða 8`,
+"s-lang": `Á skíggjanum: Ein tekstur á tagalog á svartari baksíðu.
+[SIG EINKI. Tel stilliliga til fimm í høvdinum. Lat salin lesa og undrast.]
+"Hetta er ein vanlig fráboðan frá einum barnagarði. Á tagalog."
+"Soleiðis kenna foreldrini seg, tá ið kunningin bert er á føroyskum."
+
+[KLIKK 1] Bókstavirnir rugla seg og verða til føroyskt.
+[Lat effektin enda, áðrenn tú tosar.]
 "Og soleiðis kennist tað, tá ið tað er á tínum egna máli."
-[KLIKK → trý mál]
-"Starvsfólkini skriva eina ferð. Foreldrini lesa á sínum máli."`,
-"s-demo": `"Eg havi gjørt hetta klárt frammanundan. Eg havi álit á vitlíki, men eg kenni eisini live-demo'ir."
-[KLIKK] Teksturin verður skrivaður: tann veruliga fráboðanin um túrin.
-[KLIKK] Knøtturin í skipanini: Rættles, Víðka, Týðing og mynd.
-SKEMT við Víðka: "Tað er kanska ikki tann knøtturin, tit vóna, at eg brúki í dag."
-[KLIKK] Týðing. "Eitt klikk, og har er enska týðingin."
-[KLIKK] "Og eisini danskt og kalaallisut."
-Nevn: Starvsfólkini lesa týðingina ígjøgnum, áðrenn tey leggja út. Vitlíki kann gera feilir.`,
-"s-price": `"Ein týðing kostar 51 oyru og tekur nøkur sekund."
-[KLIKK]
-"Leiðarin sigur, at hetta hevur spart teimum ómetaliga nógva tíð. Tíð, sum kann fara til børnini."`,
-"s-chain": `"Hvat hevur ein týðingarknøttur so við kappingarføri at gera? Nógv, haldi eg."
-[KLIKK] "Hjá okkum: Skjótari menning gevur meira tíð til kundan, og tað gevur betri loysnir."
-[KLIKK] "Hjá kundanum: Minni týðingararbeiði gevur meira tíð við børnunum."
-"Kappingarførið liggur í samansetingini: at skilja kundan væl og kunna veita eina nytsama loysn skjótt."`,
-"s-resp": `"Vitlíki ger uppskot."
-[KLIKK]
-"Men vit hava ábyrgdina. Vit kanna koduna, áðrenn hon fer út. Og starvsfólkini lesa kunningina ígjøgnum, áðrenn tey leggja hana út."`,
-"s-end": `[KLIKK] "Vit eru eitt lítið toymi."
-[KLIKK] "Men vit duga at hugsa stórt."
-[KLIKK] "Og vit byrja altíð við kundanum."
-[KLIKK → Meira tíð til menniskju. Steðga leingi.]
-"Hjá okkum byrjaði tað við eini samrøðu við ein kunda. Í hesum døminum endar tað hjá børnunum."
-[KLIKK] "Hvørjum vilja tit brúka tíðina saman við?"
-[Steðga. Lat spurningin standa.]
-[KLIKK → Takk fyri.] "Takk fyri."`,
-"s-thanks": `Lat síðuna standa, meðan spurningar verða settir.`
+
+[KLIKK 2] Trý kort koma fram: danskt, kalaallisut og enskt.
+"Vit hava kundar í Grønland, og tí brúka vit vitlíki til at týða tekst millum hesi fýra málini"
+[KLIKK] → Síða 9`,
+"s-demo": `Á skíggjanum: Vindeygað "Nýggj kunning", tómt.
+"Fara vit aftur til barnagarðin, so hava tey t.d. hesa funkuna í dag."
+
+[KLIKK 1] Teksturin verður skrivaður.
+"Starvsfólkið skrivar fráboðanina á føroyskum, sum tey altíð hava gjørt. Í morgin fara vit ein langan túr. Minnist til matpakka og góð klæðir."
+
+[KLIKK 2] Kursurin trýstir á "Hjálp frá AI". Menuin kemur.
+"Tey skriva ein tekst á Føroyskum, og hava so ein hjálparknøtt"
+"Rættles tekstin, skriva stikkorð og víðka tekstin"
+"Eisini er møguligt at gera eina mynd til kunningina. Og so er tað Týðing."
+
+[KLIKK 3] Týðing verður valt. Enska týðingin kemur.
+"Eitt klikk. Og har er enska týðingin."
+
+[KLIKK 4] Málini skifta: danskt, kalaallisut, enskt.
+"Og eisini danskt og kalaallisut."
+"Starvsfólkini kunnu lesa týðingina ígjøgnum, áðrenn tey leggja hana út. Tað er umráðandi, tí vitlíki kann gera feilir. Serliga tá ið tað snýr seg um týdningarmikla kunning."
+[KLIKK] → Síða 10`,
+"s-price": `Á skíggjanum: 0,51 kr. Stórt.
+"Hatta kostaði starvsfólkinum 0,50kr og nøkur sekund."
+[Steðga. Lat talið standa.]
+
+[KLIKK 1] Undirtekstur kemur.
+"Hetta sparir nógva tíð, tí hetta eru ikki serfrøðingar í máli"
+"Tíð, sum ikki fer til at týða er tíð, sum heldur kann fara til børnini."
+[KLIKK] → Síða 11`,
+"s-chain": `Á skíggjanum: Frá einum knøtti til kappingarføri.
+"Hvat hevur ein týðingarknøttur so við kappingarføri at gera?"
+
+[KLIKK 1] Ovara røðin: Skjótari menning → Meira tíð til kundan → Betri loysnir.
+"Vitlíki ger, at vit menna skjótari. Tað gevur okkum meira tíð til kundan. Og tá ið vit skilja kundan betur, gera vit betri loysnir."
+
+[KLIKK 2] Niðara røðin: Minni týðingararbeiði → Meira tíð við børnunum.
+"Kundin brúkar minni tíð til týðingar. Meira tíð við børnunum."
+"Kappingarførið liggur í samansetingini. At skilja kundan væl. Og at kunna veita eina góðs loysn skjótt."
+[KLIKK] → Síða 12`,
+"s-resp": `Á skíggjanum: Vitlíki ger uppskot.
+"Vitlíki ger uppskot."
+[Steðga]
+
+[KLIKK 1] Vit hava ábyrgdina.
+"Men vit hava ábyrgdina. Vit tryggja koduna, áðrenn hon fer út. Og starvsfólkini tryggja kunningina ígjøgnum, áðrenn tey leggja hana út.
+Vitlíki kann eisini gera feilir."
+[KLIKK] → Síða 13`,
+"s-end": `Á skíggjanum: Tómt. Tal seint og rólig her.
+[KLIKK 1] "Vit eru eitt lítið toymi."
+[KLIKK 2] "Men vit duga at hugsa stórt."
+[KLIKK 3] "Og vit byrja altíð við kundanum."
+
+[KLIKK 4] Meira tíð til menniskju kemur fram.
+[Steðga. Tel til trý. Hygg út í salin.]
+"Vit hava meir tíð saman við kundan. Í hesum døminum endar tíðin hjá børnunum."
+
+[KLIKK 5] Spurningurin til salin kemur fram.
+"Vit mugu leggja dent á tey menniskjaligu virðini, og brúka vitlíki til okkara gagn. Tíðin kann skjótt leypa avstað við teldum og vitlíki, men vit mugu ikki gloyma, at tað eru menniskjaligu virðini, sum knýta okkum saman"
+[Steðga]
+[KLIKK] → Síða 14`,
+"s-thanks": `Á skíggjanum: Takk fyri. Tvey Kodio-merki koma inn sum "kk", annað ovanfrá og hitt neðanfrá.
+"Takk fyri."
+Lat síðuna standa, meðan spurningar verða settir.`
 };
 /* =================================== */
 

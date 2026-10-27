@@ -461,7 +461,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.05}
 <!-- 12. Thanks -->
 <section class="slide navy" id="s-thanks" data-steps="0">
   <div class="center">
-    <h1 aria-label="Takk fyri."><span aria-hidden="true">Ta<svg class="kin down" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg><svg class="kin up" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg> fyri.</span></h1>
+    <h1 aria-label="Takk fyri."><span aria-hidden="true"><span style="letter-spacing:-.085em">T</span>a<svg class="kin down" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg><svg class="kin up" xmlns="http://www.w3.org/2000/svg" viewBox="62 36 93 123"><g fill="#fff"><path d="M63,43 Q63,36 70,36 H88 V114 H63 Z"/><path d="M88,114 V159 H70 Q63,159 63,152 V145.5 Z"/><path d="M122.5,72 H151 L118.5,114 L151.5,154.5 Q154,159 149,159 H124.5 L89,114 Z"/></g></svg> <span style="letter-spacing:.005em">f</span>yri.</span></h1>
   </div>
 </section>
 
@@ -689,8 +689,13 @@ function demoRender(k, animate){
 }
 
 function chainRender(k){
-  document.querySelectorAll('#s-chain .c1').forEach((e,i)=>{ e.classList.remove('on'); if(k>=1) later(()=>e.classList.add('on'), i*280); });
-  document.querySelectorAll('#s-chain .c2').forEach((e,i)=>{ e.classList.remove('on'); if(k>=2) later(()=>e.classList.add('on'), i*280); });
+  // Only animate items that are not already visible, so row one stays put when row two appears.
+  const show = (sel, from) => document.querySelectorAll(sel).forEach((e,i)=>{
+    if (k < from) e.classList.remove('on');
+    else if (!e.classList.contains('on')) later(()=>e.classList.add('on'), i*280);
+  });
+  show('#s-chain .c1', 1);
+  show('#s-chain .c2', 2);
 }
 
 function llmRender(k){

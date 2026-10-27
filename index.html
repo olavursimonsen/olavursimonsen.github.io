@@ -721,6 +721,7 @@ function apply(animate){
   $('#nBody').textContent = NOTES[s.id] || '';
   const nx = slides[si+1]; $('#nNext').textContent = nx ? 'Næsta: ' + (nx.querySelector('h1,h2')?.textContent || nx.id) : 'Seinasta síða';
   history.replaceState(null,'','#'+(si+1)+'.'+step);
+  share();
 }
 function next(){
   if (!t0) t0 = Date.now();
@@ -753,10 +754,32 @@ helpT = setTimeout(hideHelp, 6000);
 let curT; addEventListener('mousemove', ()=>{ document.body.classList.remove('hidecursor'); clearTimeout(curT); curT=setTimeout(()=>document.body.classList.add('hidecursor'),2000); });
 setInterval(()=>{ if(!t0) return; const s=Math.floor((Date.now()-t0)/1000); $('#nTime').textContent = String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }, 1000);
 
+/* ---------- sync between windows (same browser, same address) ---------- */
+let syncing = false;
+const chan = ('BroadcastChannel' in window) ? new BroadcastChannel('meira-tid-sync') : null;
+function share(){
+  if (syncing) return;
+  const msg = { si, step, t: Date.now() };
+  try { chan && chan.postMessage(msg); } catch(e){}
+  try { localStorage.setItem('meira-tid-slide', JSON.stringify(msg)); } catch(e){}
+}
+function follow(m){
+  if (!m) return;
+  if (m.hello){ share(); return; }               // a new window asks where we are
+  if (m.si === si && m.step === step) return;     // already there
+  const forward = (m.si === si && m.step === step + 1) || (m.si === si + 1 && m.step === 0);
+  si = Math.min(slides.length-1, Math.max(0, m.si)); step = m.step;
+  if (!t0) t0 = Date.now();
+  syncing = true; apply(forward); syncing = false;
+}
+if (chan) chan.onmessage = e => follow(e.data);
+addEventListener('storage', e => { if (e.key === 'meira-tid-slide' && e.newValue){ try { follow(JSON.parse(e.newValue)); } catch(_){} } });
+
 // restore position from hash
 const m = location.hash.match(/^#(\d+)\.(\d+)$/);
 if (m){ si = Math.min(slides.length-1, Math.max(0, +m[1]-1)); step = Math.min(+slides[si].dataset.steps, +m[2]); }
-apply(!m);
+syncing = true; apply(!m); syncing = false;   // opening a window must not move the others
+if (!m && chan) chan.postMessage({ hello: true });
 </script>
 </body>
 </html>
